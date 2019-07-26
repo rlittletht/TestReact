@@ -1,0 +1,3 @@
+[config]
+command=site-deploy.cmd
+
