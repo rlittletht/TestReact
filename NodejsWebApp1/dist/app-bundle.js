@@ -117,11 +117,24 @@ var Hello = /** @class */ (function (_super) {
         return _super !== null && _super.apply(this, arguments) || this;
     }
     Hello.prototype.render = function () {
-        return (React.createElement("h1", null, "Welcome to React!!"));
+        return (React.createElement("h1", null,
+            "Welcome to ",
+            React.createElement(Inner, null)));
     };
     return Hello;
 }(React.Component));
 exports.Hello = Hello;
+var Inner = /** @class */ (function (_super) {
+    __extends(Inner, _super);
+    function Inner() {
+        return _super !== null && _super.apply(this, arguments) || this;
+    }
+    Inner.prototype.render = function () {
+        return (React.createElement("span", null, "This is an inline react test string"));
+    };
+    return Inner;
+}(React.Component));
+exports.Inner = Inner;
 ReactDOM.render(React.createElement(Hello, null), document.getElementById('root'));
 
 
