@@ -1,2 +1,3 @@
 echo This is my local deploy...
-
+echo Environment:
+set
