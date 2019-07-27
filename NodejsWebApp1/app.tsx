@@ -16,7 +16,7 @@ export class Inner extends React.Component
     render()
     {
         return (
-            <span>This is an inline react test string</span>
+            <span style={{"font-weight": "bold"}}>This is an inline react test string</span>
         );
     }
 }
