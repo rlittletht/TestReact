@@ -13,10 +13,10 @@ rem ::: Now actually deploy using deploy.cmd
 
 pushd %DEPLOYMENT_SOURCE%\..\SubRepos\TestReactRepo1\NodeJsWebApp1
 
-npm install
+call npm install
 del /q dist\*
-node_modules\.bin\tsc
-node_modules\.bin\webpack-cli app.tsx --config webpack-config.js
+call node_modules\.bin\tsc
+call node_modules\.bin\webpack-cli app.tsx --config webpack-config.js
 popd
 
 call :DeploySubSite %DEPLOYMENT_SOURCE%\..\SubRepos\TestReactRepo1\NodeJsWebApp1 %DEPLOYMENT_TARGET%\rtest
