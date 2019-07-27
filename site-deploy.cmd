@@ -11,6 +11,14 @@ call :CloneOrSyncGit https://github.com/rlittletht/TestReact.git %DEPLOYMENT_SOU
 
 rem ::: Now actually deploy using deploy.cmd
 
+pushd %DEPLOYMENT_SOURCE%\..\SubRepos\TestReactRepo1\NodeJsWebApp1
+
+npm install
+del /q dist\*
+node_modules\.bin\tsc
+node_modules\.bin\webpack-cli app.tsx --config webpack-config.js
+popd
+
 call :DeploySubSite %DEPLOYMENT_SOURCE%\..\SubRepos\TestReactRepo1\NodeJsWebApp1 %DEPLOYMENT_TARGET%\rtest
 call :DeploySubSite %DEPLOYMENT_SOURCE%\..\SubRepos\TestReactRepo1\NodeJsWebApp1 %DEPLOYMENT_TARGET%\rtest3
 
